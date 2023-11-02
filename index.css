@@ -1,12 +1,30 @@
 body {
+
+  font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: gray;
-  height: 100vh;
   margin: 0;
   box-sizing: border-box;
+  --border-radius: 0.5rem;
+}
+
+#chatbot-container {
+  background-color: whitesmoke;
+  border-radius: var(--border-radius);  
+}
+
+html {
+  background: linear-gradient(151deg, rgba(25,6,51,1) 0%, rgba(25,6,51,1) 5%, rgb(0, 0, 0) 75%);
+  /* color: white; */
+}
+
+main {
+  background-color: whitesmoke;
+  color: black;
+  border-radius: 0.5rem;
+  min-height: 100vh;
 }
 
 h1 {
@@ -23,8 +41,12 @@ h2 {
 }
 
 main {
-  background-color: white;
+  /* background-color: #190633; */
   width: 100%;
+}
+
+#img-top {
+  display: none;
 }
 
 
@@ -42,20 +64,45 @@ main {
   }
 
   main {
-    display: grid;
-    grid-template-columns: [first] 3fr [second] 3fr [third];
-    grid-template-rows: [first] 1fr [second] 6fr [third] 1fr [fourth];
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
     max-width: 1000px;
+    min-height: auto;
   }
   
   #info-header {
+    width: 75%;
+  }
+
+  #img-top {
+    display: block;
+    position: absolute;
+    top: -1rem;
+    border-radius: 50%;
+    border-collapse: separate;
+  }
+
+  #info-header-center-container {
     grid-column-start: first;
     grid-column-end: third;
     grid-row-start: first;
     grid-row-end: second;
-    text-align: center;
+    /* text-align: center; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
+  #grid-container {
+    display: grid;
+    grid-template-columns: [first] 3fr [second] 3fr [third];
+    grid-template-rows: [first] 1fr [second] 2fr [third];
+    width: 100%;
+  }
+
   #info-container {
     grid-column-start: first;
     grid-column-end: second;
@@ -71,7 +118,11 @@ main {
     grid-column-start: second;
     grid-column-end: third;
     grid-row-start: second;
-    grid-row-end: fourth;
-    height: auto;
+    grid-row-end: third;
+    height: 100%;
+  }
+
+  #chatbot-iframe, #chatbot-container {
+    border-radius: var(--border-radius);
   }
 }
