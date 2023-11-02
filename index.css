@@ -11,6 +11,10 @@ body {
   min-height: 100vh;
 }
 
+.unselectable {
+  user-select: none;
+}
+
 #chatbot-container {
   background-color: whitesmoke;
   border-radius: var(--border-radius);  
