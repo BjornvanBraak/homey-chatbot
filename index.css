@@ -8,6 +8,7 @@ body {
   margin: 0;
   box-sizing: border-box;
   --border-radius: 0.5rem;
+  min-height: 100vh;
 }
 
 #chatbot-container {
